@@ -1,0 +1,52 @@
+.menu.selected {
+    color: $active;
+    font-weight: bolder;
+    border-bottom: 2px solid $active;
+    border-radius: 200px 0px 0px 200px;
+    -moz-border-radius: 200px 0px 0px 200px;
+    -webkit-border-radius: 200px 0px 0px 200px;
+    background-color: $background;
+    text-decoration: none;
+}
+.menu.selected-col {
+    color: $active;
+    font-weight: bolder;
+    border-bottom: 2px solid $active;
+    text-decoration: none;
+}
+
+.menu{
+    color: $inactive;
+    font-weight: bolder;
+    padding: .3em;
+    padding-left: 1em;
+    margin: 0 0 .8em 0;
+}
+
+.sidemenu {
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  .headerText {
+      font-size: 2.5em;
+      font-weight: bolder;
+      color: $element;
+  }
+}
+.headerBtn {
+  align-self: flex-end;
+  margin-left: auto;
+  margin-right: .5em;
+  margin-bottom: .8em;
+  color: $inactive;
+  font-weight: bolder;
+  padding: .3em 1em .3em 1em;
+  background-color: transparent;
+  border-radius: 200px 0px 200px 0px;
+ -moz-border-radius: 200px 0px 200px 0px;
+ -webkit-border-radius: 200px 0px 200px 0px;
+}

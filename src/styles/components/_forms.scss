@@ -1,0 +1,300 @@
+.keyheader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $background;
+  padding: 0.5em;
+  .btn {
+      background-color: $primary;
+      color: $primaryLight;
+      font-weight: 600;
+  }
+}
+
+.modal-footer {
+    .btn-primary {
+        background-color: $primary;
+        color: $primaryLight;
+        font-weight: 600;
+    }
+}
+
+.modal-body {
+    max-height: 500px;
+    overflow: auto;
+}
+
+.input-label {
+    font-size: 1em;
+    font-weight: 600 !important;
+    color: $font-color;
+    margin-bottom: 0;
+    white-space: nowrap;
+}
+
+.input {
+    color: $font-input-color;
+    padding: .2em .2em .2em .2em;
+
+}
+
+.input-field {
+    margin-left: 1em;
+    margin-right: auto;
+    background-color: $element;
+    border-width: thin;
+    border-style: solid;
+    border-radius: 5px;
+}
+
+.input-checkbox {
+    background-color: Transparent;
+}
+
+.input-TextField {
+    max-width: 20em;
+    width: auto;
+    margin-right: 2em;
+
+}
+
+
+.input-field:focus, .input-TextField:focus, .input-checkbox:focus,.input-field-popup:focus  {
+  outline: none;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+.input-label-popup {
+    font-size: .8em;
+    font-weight: 600 !important;
+    color: $primary;
+    margin-right: 1em;
+    margin-left: 1em;
+    z-index: 1000;
+    background-color: $element;
+    width: fit-content;
+    padding-left: .4em;
+    padding-right: .4em;
+    padding-bottom: 0px;
+    margin-bottom: -.7em;
+}
+
+.input-popup {
+    color: $font-input-color;
+    padding: .3em .3em .3em .3em;
+    background-color: $element;
+    border-width: thin;
+    border-style: solid;
+    border-radius: 5px;
+}
+.input-field-popup {
+    margin-right: 2em;
+    max-width: 20em;
+}
+
+.input-container-popup {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+.image-label {
+    align-self: flex-start;
+    font-size: 1em;
+    font-weight: 600;
+    color: $font-color;
+    margin-right: 1em;
+    margin-bottom: 0;
+    white-space: nowrap;
+}
+
+.key-image-label {
+    font-size: 1em;
+    margin-right: 1em;
+    font-weight: 600;
+    width: auto;
+    color: $font-color;
+}
+
+.smallImage {
+    height: auto;
+    width: auto;
+    max-width: 8em;
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+    border-width: thin;
+    border-style: groove;
+}
+
+.key-image-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.imageUpload {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 8em;
+    width: 8em;
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+    border-width: medium;
+    border-style: dashed;
+    border-color: rgba(186, 186, 186, 0.6);
+    font-size: 1em;
+    cursor: pointer;
+    text-align: center;
+    background-color: Transparent;
+    color: $font-color;
+}
+.imageUpload-withIMG {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 8em;
+    width: 8em;
+    padding: 0;
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+    border-width: 0;
+    cursor: pointer;
+    background-color: Transparent;
+}
+
+
+.uploadIcon {
+
+}
+
+.addNewBtn {
+    font-size: 3em;
+    cursor: pointer;
+    text-align: center;
+    background-color: Transparent;
+    border: none;
+    color: $font-color;
+}
+
+.addNewBtn:focus {
+    outline: none;
+}
+
+
+.checkboxBtn {
+    font-size: 1em;
+    text-align: center;
+    background-color: Transparent;
+    border: none;
+    color: $font-color;
+}
+
+.addNewTextBtn {
+    font-size: 0.6em;
+    text-align: center;
+    background-color: $smallbtn;
+    border: none;
+    border-radius: .2rem;
+    color: $smallbtnText;
+}
+
+.addNewTextBtn:focus {
+    outline: inherit inherit;
+    outline-color: $primary;
+}
+
+.addNewBtnHolder {
+    margin-top: 2em;
+    display: flex;
+    cursor: pointer;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-left: 1.5em;
+    margin-right: auto;
+    margin-bottom: 5em;
+    align-items: center;
+}
+
+.imageFile {
+    display: flex;
+    padding: .1rem .4rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: .7em;
+    background-color: $smallbtn;
+    color: $font-color;
+    text-align: center;
+}
+
+.imageBadge {
+    cursor: pointer;
+    font-size: 1.2em;
+    margin-left: .3em;
+    border-radius: .2rem;
+    color: $font-color;
+    text-align: center;
+}
+
+.valueNumber {
+    color: $font-color;
+    font-weight: bolder;
+}
+
+.toolTip {
+  font-size: 0.2;
+}
+
+.radioGroup {
+  margin-left: 2em;
+}
+
+.divider {
+    border-right-width: thin;
+    border-right-style: solid;
+    border-color: $divider;
+    align-items: center;
+    justify-content: flex-end;
+
+}
+.valueDevider {
+    border-bottom-width: medium;
+    border-bottom-style: solid;
+    border-color: $divider;
+}
+.rowDivider {
+    position: relative;
+    border-bottom-width: thin;
+    border-bottom-style: solid;
+    border-color: $divider;
+}
+
+.delIcon {
+    font-size: 1em;
+    color: $font-color;
+    cursor: pointer;
+    background-color: Transparent;
+    border: 0;
+    position: absolute;
+    top: 1em;
+    right: 1em;
+}
+
+.setFocus:focus {
+    outline: inherit inherit;
+    outline-color: $primary;
+}
