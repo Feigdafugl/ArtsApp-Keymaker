@@ -1,8 +1,21 @@
+/**
+ * @file traitReducer.js
+ * @author Kjetil Fossheim
+ *
+ *
+ *
+ */
+
 import * as actionTypes from '../actions/actionsTypes';
 import update from 'immutability-helper';
 
 // INITIALIZE STATE
 
+
+/**
+ * initial trait Value Combo to fill in traitValueCombo list
+ * @type {Object}
+ */
 const initTrait =  {
     traitId: 1,
     traitText: '',
@@ -19,6 +32,11 @@ const initTrait =  {
     ]
 };
 
+/**
+ * initial state
+ * -trigger == a trigget to get trait Component to reRender
+ * @type {Object}
+ */
 const initialState = {
     traitValueCombo: [initTrait],
     trigger: false,
@@ -26,6 +44,12 @@ const initialState = {
     valueCount: 1,
 };
 
+
+/**
+ * returns an new empty value object
+ * @param {[integer]} index index for the new value
+ * @return {array}
+ */
 function addValue(index) {
     return [{
         valueId: index,
@@ -34,7 +58,12 @@ function addValue(index) {
         images: [],
     }];
 }
-
+/**
+ * returns an new empty trait object
+ * @param {integer} traitIndex index for the new trait
+ * @param {integer} valueIndex index for the new value
+ * @return {array}
+ */
 function addTrait(traitIndex, valueIndex) {
     return [{
         traitId: traitIndex,

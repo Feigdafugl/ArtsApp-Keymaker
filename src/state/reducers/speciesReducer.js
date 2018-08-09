@@ -3,7 +3,10 @@ import update from 'immutability-helper';
 
 // INITIALIZE STATE
 
-
+/**
+ * initial Species object to fill in speciesList
+ * @type {Object}
+ */
 const emptySp = {
     speciesId: 1,
     latinName: '',
@@ -21,6 +24,11 @@ const initialState = {
     speciesCount: 1,
 };
 
+/**
+ * returns an new empty species object
+ * @param {[integer]} index index for the new species
+ * @return {array}
+ */
 function addSpecies(index) {
     return [{
         speciesId: index,

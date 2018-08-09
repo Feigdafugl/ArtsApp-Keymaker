@@ -1,4 +1,15 @@
 /* eslint react/prop-types: 0 */
+
+/**
+ * @file KeyHeader.js
+ * @author Kjetil Fossheim
+ *
+ * Header for the current key in the making. Handles input for title and author. The keyheader is also handling the download of al key data to a JSON-file.
+ * The "Lagre" button will be made to save to i web-service not file further on.
+ *
+ */
+
+// IMPORT
 import React, {Component} from 'react';
 import Input from '../shared/Input';
 
@@ -31,6 +42,10 @@ class KeyHeader extends Component {
         };
     }
 
+    /**
+     * makes the JSON object for printing to file.
+     * @return {Object}
+     */
     makeJSON = () => {
         var data = {};
         data = { [this.props.activeKey.title.replace(/\s/g,'')]: this.props.activeKey};
@@ -38,7 +53,12 @@ class KeyHeader extends Component {
         return JSON.stringify(data);
     }
 
-    // Function to download data to a file
+    /**
+     * Function to download data to a file
+     * @param {string} filename optional file name, is overruled by 'artsappSave.json'
+     * @return {bool} false if user cancels
+     */
+
     download = ( filename) =>{
         var r = confirm('Vil du lagre nøkkelen?');
         if (r == true) {

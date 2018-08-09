@@ -1,13 +1,19 @@
 /* eslint react/prop-types: 0 */
-// IMPORT PACKAGES
+
+/**
+ * @file Key.js
+ * @author Kjetil Fossheim
+ *
+ * Screen wrapping the key input component.
+ *
+ */
+
+// IMPORT
 import React, {Component} from 'react';
-
-
 import KeyComponent from '../components/keyComp/KeyComponent';
 
 
 // COMPONENT
-
 class Key extends Component {
 
     constructor (props) {
@@ -24,6 +30,6 @@ class Key extends Component {
         );
     }
 
-
 }
+
 export default Key;

@@ -12,6 +12,7 @@ import { AppReducer } from '../reducers/AppReducer';
 
 
 // CONFIGURE STORE
+// remove logger for prod
 
 export const createAppStore = () => {
     return createStore(AppReducer, applyMiddleware( logger, promiseMiddleware()));

@@ -1,4 +1,14 @@
 /* eslint react/prop-types: 0 */
+
+/**
+ * @file KeyHeader.js
+ * @author Kjetil Fossheim
+ *
+ * Component for the current key in the making. Handles input for description, Logo, description Image, level of key and level of publishing.
+ *
+ */
+
+// IMPORT
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import ReactTooltip from 'react-tooltip';
@@ -20,10 +30,10 @@ function mapDispatchToProps(dispatch) {
     };
 }
 
+// FileReader var to be init
 var reader;
 
 // COMPONENT
-
 class KeyComponent extends Component {
 
     constructor (props) {
@@ -36,6 +46,11 @@ class KeyComponent extends Component {
         };
     }
 
+    /**
+     * reads image files and saves it to global state
+     * @param {Object} event event from input field, containing files
+     * @return {void}
+     */
     fileSelect = (event) => {
         const target = event.target;
         const name = target.name;
@@ -67,10 +82,6 @@ class KeyComponent extends Component {
         this.setState({
             publishingLevel: event.target.name,
         });
-    }
-
-    drop =(e) =>{
-        console.log(e);
     }
 
     render () {

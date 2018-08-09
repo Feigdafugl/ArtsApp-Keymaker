@@ -1,9 +1,15 @@
 /* eslint react/prop-types: 0 */
-// IMPORT PACKAGES
+/**
+ * @file Traits.js
+ * @author Kjetil Fossheim
+ *
+ * Screen controlling the list of traits adding new to the list.
+ *
+ */
 
+// IMPORT
 import React, {Component} from 'react';
 import ReactList from 'react-list';
-
 import Trait from '../components/TraitValue/Trait';
 
 // REDUX

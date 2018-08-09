@@ -1,7 +1,15 @@
 /* eslint react/prop-types: 0 */
-// IMPORT PACKAGES
-import React, {Component} from 'react';
 
+/**
+ * @file Species.js
+ * @author Kjetil Fossheim
+ *
+ * Screen controlling the list of Species adding new to the list.
+ *
+ */
+
+// IMPORT
+import React, {Component} from 'react';
 import SpesiesComp from '../components/spesiesComp/SpesiesComp';
 import ReactList from 'react-list';
 
