@@ -8,7 +8,7 @@ const initTrait =  {
     traitText: '',
     important: false,
     traitDescription: '',
-    hasSp:[],
+    traitSpecies:[],
     values: [
         {
             valueId: 1,
@@ -41,7 +41,7 @@ function addTrait(traitIndex, valueIndex) {
         traitText: '',
         important: false,
         traitDescription: '',
-        hasSp:[],
+        traitSpecies:[],
         values: [
             {
                 valueId: valueIndex,
@@ -93,7 +93,7 @@ export const TraitReducer = (state = initialState, action) => {
                 trigger: {$set: !state.trigger},
                 traitValueCombo: {
                     [traitIndex]: {
-                        hasSp: {$set: action.value}
+                        traitSpecies: {$set: action.value}
                     }
                 }
             });

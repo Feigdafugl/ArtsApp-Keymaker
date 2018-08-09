@@ -33,8 +33,8 @@ class KeyHeader extends Component {
 
     makeJSON = () => {
         var data = {};
-        data = this.props.activeKey;
-        data.content = {species: this.props.speciesList, trait: this.props.traitValueCombo};
+        data = { [this.props.activeKey.title.replace(/\s/g,'')]: this.props.activeKey};
+        data[this.props.activeKey.title.replace(/\s/g,'')].content = {species: this.props.speciesList, trait: this.props.traitValueCombo};
         return JSON.stringify(data);
     }
 

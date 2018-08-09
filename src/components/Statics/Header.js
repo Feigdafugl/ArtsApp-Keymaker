@@ -52,6 +52,7 @@ class Header extends Component {
     handelUpload =(e) => {
         console.log(e);
         var result = JSON.parse(e.target.result);
+        result = result[Object.keys(result)[0]];
         console.log(result);
         var content = result.content;
         delete result.content;

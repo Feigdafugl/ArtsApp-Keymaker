@@ -24,7 +24,7 @@ class SpModal extends Component {
     constructor (props) {
         super(props);
         this.state = {
-            speciesList: props.hasSp
+            speciesList: props.traitSpecies
         };
     }
 

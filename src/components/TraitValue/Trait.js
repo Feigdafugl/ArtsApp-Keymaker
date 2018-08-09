@@ -46,7 +46,7 @@ class Trait extends Component {
     }
 
     renderSp = () => {
-        return this.props.trait.hasSp.map ((item) => {
+        return this.props.trait.traitSpecies.map ((item) => {
             var temp = this.props.speciesList.find(i => i.speciesId === item);
             return(
                 <div className = "imageFile m-1" key = {item}>
@@ -125,7 +125,7 @@ class Trait extends Component {
                     </div>
                 </div>
                 <div className="modal fade" id={'speciesModal' + this.props.trait.traitId} tabIndex="-1" role="dialog" aria-labelledby="speciesModal" aria-hidden="true">
-                    <SpModal hasSp = {this.props.trait.hasSp} type="sp" typeID= {this.props.trait.traitId} onDialogClick = {this.newValue}/>
+                    <SpModal traitSpecies = {this.props.trait.traitSpecies} type="sp" typeID= {this.props.trait.traitId} onDialogClick = {this.newValue}/>
                 </div>
                 <div className="modal fade" id={'deleteDialogT' +this.props.trait.traitId} tabIndex="-1" role="dialog" aria-labelledby={'deleteDialogT' +this.props.trait.traitId} aria-hidden="true">
                     <DeleteDialog  type= "trait" onDialogClick = {this.delete}/>
