@@ -82,7 +82,7 @@ class Header extends Component {
                             ref = {fileInput => this.fileInput = fileInput}
                         />
                         <button type= "button" className="btn headerBtn " onClick = {() => this.fileInput.click()} >
-                            Hjem
+                            Last opp nøkkel
                         </button>
                     </div>
                 </div>
