@@ -1,4 +1,13 @@
+/**
+ * @file DeleteDialog.js
+ * @author Kjetil Fossheim
+ *
+ * This is i dialog Component that makes the proper text.
+ * used for deleting of species, traits and values.
+ *
+ */
 
+// IMPORT
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
@@ -28,8 +37,8 @@ class DeleteDialog extends Component {
 
         };
     }
+
     makeText =() => {
-        console.log(this.props.type);
         if (this.props.type === 'sp') {
             return 'Er du sikker på du vil slette denne arten?';
         } else if (this.props.type === 'trait') {

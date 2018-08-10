@@ -43,7 +43,6 @@ class Traits extends Component {
 
 
     renderItem = (index, key) =>{
-        console.log(this.props.traitValueCombo);
         return (
             <Trait key = {this.props.traitValueCombo[key].traitId} trait ={this.props.traitValueCombo[key]}/>
         );

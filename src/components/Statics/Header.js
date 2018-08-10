@@ -1,6 +1,15 @@
 /* eslint react/prop-types: 0 */
-import React, {Component} from 'react';
 
+/**
+ * @file Header.js
+ * @author Kjetil Fossheim
+ *
+ * Component for site header. Displays logo and title. Has also a home button, currently used for uploading of JOSN files containing saved keys.
+ *
+ */
+
+// IMPORT
+import React, {Component} from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '../../images/logo_bygger.png';
 
@@ -17,17 +26,14 @@ const mapStateToProps = (state) => ({
 });
 
 function mapDispatchToProps(dispatch) {
-    return {
-        actions: bindActionCreators({...keyActions, ...traitActions, ...speciesActions}, dispatch)
-    };
+    return { actions: bindActionCreators({...keyActions, ...traitActions, ...speciesActions}, dispatch)};
 }
 
-
+// FileReader var to be init
 var reader;
 
 
 // COMPONENT
-
 class Header extends Component {
 
     constructor (props) {
@@ -42,7 +48,6 @@ class Header extends Component {
             return false;
         }
         if (b[0].type.match('json') ) {
-            console.log('ja');
             reader = new FileReader();
             reader.readAsText(b[0]);
             reader.onloadend = this.handelUpload.bind(this, );
@@ -50,13 +55,10 @@ class Header extends Component {
     }
 
     handelUpload =(e) => {
-        console.log(e);
         var result = JSON.parse(e.target.result);
         result = result[Object.keys(result)[0]];
-        console.log(result);
         var content = result.content;
         delete result.content;
-        console.log(content);
         this.props.actions.setKey(result);
         this.props.actions.setSpecies(content.species);
         this.props.actions.setTraits(content.trait);

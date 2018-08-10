@@ -1,4 +1,16 @@
 /* eslint react/prop-types: 0 */
+
+/**
+ * @file SpesiesComp.js
+ * @author Kjetil Fossheim
+ *
+ * Component with Input fields for species. Has also a button for removing selected species
+ * @see Input.js
+ *
+ */
+
+
+// IMPORT
 import React, {Component} from 'react';
 import ChooseValueModal from './ChooseValueModal';
 import DeleteDialog from '../shared/DeleteDialog';
@@ -36,7 +48,6 @@ class SpesiesComp extends Component {
 
     delete = () => {
         this.props.actions.removeSpecies(this.props.species.speciesId);
-        console.log('slett', this.props.species.speciesId);
     }
 
     renderValues = () => {

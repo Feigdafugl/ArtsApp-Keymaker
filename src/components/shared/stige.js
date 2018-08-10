@@ -1,3 +1,12 @@
+/**
+ * @file stige.js
+ * @author Kjetil Fossheim
+ *
+ * This is a file not used
+ *
+ */
+
+
 export const stige = {
     1: {retning: null, til: 0},
     2: {retning: null, til: 0},

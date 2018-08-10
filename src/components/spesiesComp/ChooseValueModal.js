@@ -1,4 +1,14 @@
 /* eslint react/prop-types: 0 */
+
+/**
+ * @file ChooseValueModal.js
+ * @author Kjetil Fossheim
+ *
+ * This is i dialog Component rendering a list of trait value combinations, so the user can choose values that are associated with the specific species.
+ *
+ */
+
+// IMPORT
 import React, {Component} from 'react';
 import ReactList from 'react-list';
 
@@ -18,7 +28,6 @@ function mapDispatchToProps(dispatch) {
 }
 
 // COMPONENT
-
 class ChooseValueModal extends Component {
 
     constructor (props) {
@@ -32,6 +41,11 @@ class ChooseValueModal extends Component {
         this.props.actions.changeSpValues('values', this.state.valueList, this.props.spId);
     }
 
+    /**
+     * function for adding and removing values from state
+     * @param {int} name id of selected value
+     * @return {void} 
+     */
     valueSel = (name)=> {
         if (this.state.valueList.includes(name)) {
             var temp = this.state.valueList;

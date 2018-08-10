@@ -1,4 +1,15 @@
 /* eslint react/prop-types: 0 */
+
+/**
+ * @file Value.js
+ * @author Kjetil Fossheim
+ *
+ * Component with Input fields for Value. Has also a button for removing selected Value
+ *
+ */
+
+
+// IMPORT
 import React, {Component} from 'react';
 import Input from '../shared/Input';
 import DeleteDialog from '../shared/DeleteDialog';
@@ -13,13 +24,10 @@ const mapStateToProps = (state) => ({
 });
 
 function mapDispatchToProps(dispatch) {
-    return {
-        actions: bindActionCreators({...traitActions}, dispatch)
-    };
+    return { actions: bindActionCreators({...traitActions}, dispatch)};
 }
 
 // COMPONENT
-
 class Value extends Component {
 
     constructor (props) {
@@ -32,7 +40,6 @@ class Value extends Component {
     }
 
     delete = () => {
-        console.log('her2');
         this.props.actions.removeValue(this.props.traitID, this.props.value.valueId);
     }
 

@@ -1,8 +1,16 @@
-import React, {Component} from 'react';
+/**
+ * @file SideMenu.js
+ * @author Kjetil Fossheim
+ *
+ * Component containing the side menu. Collapses at small screens.
+ *
+ */
 
+// IMPORT
+import React, {Component} from 'react';
 import { NavLink } from 'react-router-dom';
 
-
+// COMPONENT
 class SideMenu extends Component {
 
     constructor (props) {

@@ -1,4 +1,21 @@
+/**
+ * @file Input.js
+ * @author Kjetil Fossheim
+ *
+ * The Input component is used in this project as an generic input field.
+ * All data from fields is automatically saved to global state. When it dos it finds the right species, trait or value to save the data to.
+ * Al input has an label associated with it.
+ *
+ * It can be used as:
+ * - 'text'       input field , with label at the left of the input field
+ * - 'popup'      input field , with label in border. Uses Placeholders text util user has field in focus, then placeholder becomes a label in the border.
+ * - 'textarea'   text field, with label in border.
+ * - 'checkbox'   checkbox, with label at the left
+ * - 'image'      image, file input, with small badges with filename and a remove button, and a add new button.
+ *
+ */
 
+// IMPORT
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import ReactTooltip from 'react-tooltip';
@@ -111,18 +128,12 @@ class Input extends Component {
         });
     }
 
-    /**
-     * // input med label over som dukker opp
-                <div className="input-container_temp">
-                     <label className="input-label_temp" style={this.state.focus && this.state.value.length !== 0 || this.state.value.length !== 0 ? {} : {visibility: 'hidden'} } id="">{this.props.label}</label>
-                     <input className="input_temp input-field_temp" placeholder ={this.props.label} onFocus={this.onFocus} name= {this.props.name} style= {this.state.invalid ? {borderWidth: 2, borderColor: 'red', borderStyle: 'solid'} : {}} value={this.state.value}  onChange={this.handleInputChange} type={this.props.inputType}/>
-                </div>
-     */
+
     render () {
         if (this.props.inputType === 'textarea') {
             return (
                 <div className="input-container-popup">
-                    <label style= {this.props.type ==='key' ? {backgroundColor: '#DFE7ED'} : {}} className="input-label-popup" htmlFor="beskrivelse">{this.props.label}</label>
+                    <label style= {this.props.type ==='key' ? {backgroundColor: '#DFE7ED'} : {}} className="input-label-popup" >{this.props.label}</label>
                     <textarea className="input-popup input-TextField"  style= {this.props.type ==='key' ? {backgroundColor: '#DFE7ED'} : {}} id="description" name= {this.props.name} rows="4" value = {this.props.value} onChange = {this.handleInputChange}></textarea>
                 </div>
             );
@@ -151,7 +162,7 @@ class Input extends Component {
         } else if (this.props.inputType === 'checkbox') {
             return (
                 <div className="form-check form-check-inline">
-                    <label className="form-check-label mr-3 image-label " htmlFor="importantCheck">{this.props.label}</label>
+                    <label className="form-check-label mr-3 image-label " >{this.props.label}</label>
                     <button name= {this.props.name} type="button" className= "setFocus checkboxBtn" onClick = {this.importantSel}>
                         {this.props.value ?
                             <i className=" input input-checkbox far fa-check-square"/>
@@ -168,6 +179,13 @@ class Input extends Component {
                     <input className="input-popup input-field-popup" placeholder ={this.props.label} onFocus={this.onFocus} name= {this.props.name} style= {this.state.invalid ? {borderWidth: 2, borderColor: 'red', borderStyle: 'solid'} : {}} value={this.props.value}  onChange={this.handleInputChange} type="text"/>
                 </div>
             );
+        }else if (this.props.inputType === 'text' ) {
+            return (
+                <div className="my-2 input-container">
+                    <label className="input-label" id="">{this.props.label}</label>
+                    <input className="input input-field" name= {this.props.name} style= {this.state.invalid ? {borderWidth: 2, borderColor: 'red', borderStyle: 'solid'} : {}} value={this.props.value}  onChange={this.handleInputChange} type={this.props.inputType}/>
+                </div>
+            );
         }
         return (
             <div className="my-2 input-container">
@@ -180,15 +198,15 @@ class Input extends Component {
 
 Input.propTypes = {
     name: PropTypes.string.isRequired,
-    inputType: PropTypes.string.isRequired,
+    inputType: PropTypes.oneOf(['text', 'popup', 'checkbox', 'image', 'textarea']).isRequired,
     type: PropTypes.oneOf(['sp', 'trait', 'value', 'key']).isRequired,
     typeID: PropTypes.number.isRequired,
     value: PropTypes.any.isRequired,
+    label: PropTypes.string.isRequired,
     traitID: PropTypes.number,
     validation: PropTypes.func,
     actions: PropTypes.any,
     speciesList: PropTypes.array,
-    label: PropTypes.string,
     traitValueCombo: PropTypes.any,
 };
 

@@ -1,9 +1,18 @@
 /* eslint react/prop-types: 0 */
+
+/**
+ * @file Trait.js
+ * @author Kjetil Fossheim
+ *
+ * Component with Input fields for Trait, with associated values. Handels adding of new values. Has also a button for removing selected Trait.
+ *
+ */
+
+// IMPORT
 import React, {Component} from 'react';
 import Input from '../shared/Input';
 import ReactList from 'react-list';
 import DeleteDialog from '../shared/DeleteDialog';
-
 import Value from './Value';
 import SpModal from './SpModal';
 
@@ -19,9 +28,7 @@ const mapStateToProps = (state) => ({
 });
 
 function mapDispatchToProps(dispatch) {
-    return {
-        actions: bindActionCreators({...traitActions}, dispatch)
-    };
+    return {actions: bindActionCreators({...traitActions}, dispatch)};
 }
 
 
@@ -37,7 +44,6 @@ class Trait extends Component {
     }
 
     delete = () => {
-        console.log('her');
         this.props.actions.removeTrait(this.props.trait.traitId);
     }
 

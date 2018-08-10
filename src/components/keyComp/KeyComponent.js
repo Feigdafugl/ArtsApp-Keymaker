@@ -85,7 +85,6 @@ class KeyComponent extends Component {
     }
 
     render () {
-        console.log(this.props);
         return (
             <div className="row keyContainer">
                 <div className="col-xl-4 col-lg-12">

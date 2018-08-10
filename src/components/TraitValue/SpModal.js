@@ -1,5 +1,15 @@
 
 /* eslint react/prop-types: 0 */
+
+/**
+ * @file SpModal.js
+ * @author Kjetil Fossheim
+ *
+ * This is i dialog Component rendering a list of species, so the user can choose species that are associated with the specific Trait.
+ *
+ */
+
+//IMPORT
 import React, {Component} from 'react';
 
 // REDUX
@@ -12,9 +22,7 @@ const mapStateToProps = (state) => ({
 });
 
 function mapDispatchToProps(dispatch) {
-    return {
-        actions: bindActionCreators({...traitActions}, dispatch)
-    };
+    return {actions: bindActionCreators({...traitActions}, dispatch)};
 }
 
 // COMPONENT
@@ -32,6 +40,11 @@ class SpModal extends Component {
         this.props.actions.addSpeciesToTrait(this.state.speciesList, this.props.typeID);
     }
 
+    /**
+     * function for adding and removing species from state
+     * @param {int} name id of selected species
+     * @return {void}
+     */
     spSel = (name)=> {
         if (this.state.speciesList.includes(name)) {
             var temp = this.state.speciesList;

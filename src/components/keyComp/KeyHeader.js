@@ -30,7 +30,6 @@ function mapDispatchToProps(dispatch) {
 }
 
 // COMPONENT
-
 class KeyHeader extends Component {
 
     constructor (props) {
