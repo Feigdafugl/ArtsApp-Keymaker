@@ -32,7 +32,7 @@ dev | prod
 :---: | :---:
 npm run build:dev | npm run build:prod
 
-default devserver is http://localhost/:9000
+default devserver is localhost:9000
 
 
 
